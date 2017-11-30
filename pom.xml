@@ -1,0 +1,233 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>bruceliu</groupId>
+  <artifactId>BruceLiuCore</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>BruceLiuCore</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+  	<!-- spring -->
+  	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>4.1.4.RELEASE</version>
+	</dependency>
+	
+    <!-- log -->
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
+    </dependency>
+    <!-- pinyin4j -->
+	<dependency>
+	    <groupId>com.belerweb</groupId>
+	    <artifactId>pinyin4j</artifactId>
+	    <version>2.5.0</version>
+	</dependency>
+    
+    <!-- commons -->
+	<dependency>
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+		<version>1.3</version>
+	</dependency>
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>1.3</version>
+	</dependency>
+	<dependency>
+	    <groupId>commons-codec</groupId>
+	    <artifactId>commons-codec</artifactId>
+	    <version>1.9</version>
+	</dependency>
+	
+	<!-- junit -->
+	<dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+    </dependency>
+    
+    <!-- dom4j -->
+	<dependency>
+		<groupId>dom4j</groupId>
+		<artifactId>dom4j</artifactId>
+		<version>1.6</version>
+	</dependency>
+	<dependency>
+		<groupId>jaxen</groupId>
+		<artifactId>jaxen</artifactId>
+		<version>1.1.6</version>
+	</dependency>
+	
+	<!-- json -->
+	<dependency>
+		<groupId>net.sf.json-lib</groupId>
+		<artifactId>json-lib</artifactId>
+		<version>2.2.3</version>
+		<classifier>jdk15</classifier>
+	</dependency>
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>fastjson</artifactId>
+	    <version>1.2.31</version>
+	</dependency>
+	
+	<!-- http -->
+	<dependency>
+       	<groupId>org.apache.httpcomponents</groupId>
+       	<artifactId>httpclient</artifactId>
+       	<version>4.1.2</version>
+   	</dependency>
+   	<dependency>
+	    <groupId>com.squareup.okhttp3</groupId>
+	    <artifactId>okhttp</artifactId>
+	    <version>3.3.1</version>
+	</dependency>
+	
+	<!-- email -->
+	<dependency>
+	    <groupId>com.sun.mail</groupId>
+	    <artifactId>javax.mail</artifactId>
+	    <version>1.5.2</version>
+	</dependency>
+	
+	<!-- pagehelper -->
+	<dependency>  
+	    <groupId>com.github.pagehelper</groupId>  
+	    <artifactId>pagehelper</artifactId> 
+	    <version>4.0.0</version> 
+	</dependency>
+	
+	<dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.0.1</version>
+        <scope>provided</scope>
+    </dependency>
+    
+	<!-- excel poi -->
+	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi</artifactId>
+		<version>3.9</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi-ooxml</artifactId>
+		<version>3.9</version>
+	</dependency>
+	<dependency>
+	  	<groupId>org.apache.poi</groupId>
+	  	<artifactId>poi-ooxml-schemas</artifactId>
+	  	<version>3.9</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.velocity</groupId>
+		<artifactId>velocity</artifactId>
+		<version>1.7</version>
+	</dependency>
+	<!-- 二维码生成器 -->
+	<dependency>
+		<groupId>com.google.zxing</groupId>
+		<artifactId>core</artifactId>
+		<version>3.2.1</version>
+	</dependency>
+  </dependencies>
+  
+  <!-- <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin-version}</version>
+                <executions>
+                    <execution>
+                        <id>bundle-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin-version}</version>
+                <configuration>
+                    <quiet>true</quiet>
+                    <failOnError>false</failOnError>
+                    <stylesheet>maven</stylesheet>
+                    <tags>
+                        <tag>
+                            <name>Author</name>
+                            <placement>a</placement>
+                            <head>Author</head>
+                        </tag>
+                        <tag>
+                            <name>Date</name>
+                            <placement>a</placement>
+                            <head>Date</head>
+                        </tag>
+                        <tag>
+                            <name>Version</name>
+                            <placement>a</placement>
+                            <head>Version</head>
+                        </tag>
+                        <tag>
+                            <name>Email</name>
+                            <placement>a</placement>
+                            <head>Email</head>
+                        </tag>
+                    </tags>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin-version}</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin-version}</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build> -->
+
+</project>
